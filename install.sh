@@ -20,11 +20,15 @@ for arg in "$@"; do
 done
 
 mkdir -p "$DESTINO/skills" "$DESTINO/agents"
+# Backups ficam fora de skills/ e agents/ para o Claude não carregar versões duplicadas.
+BACKUP_DIR="$DESTINO/backups/web-sem-cara-de-ia-$(date +%Y%m%d%H%M%S)"
 
 instalar() {
   local src="$1" dst="$2"
   if [ -e "$dst" ] || [ -L "$dst" ]; then
-    local backup="${dst}.bak-$(date +%Y%m%d%H%M%S)"
+    local tipo; tipo="$(basename "$(dirname "$dst")")"
+    local backup="$BACKUP_DIR/$tipo/$(basename "$dst")"
+    mkdir -p "$(dirname "$backup")"
     mv "$dst" "$backup"
     echo "  backup: $backup"
   fi

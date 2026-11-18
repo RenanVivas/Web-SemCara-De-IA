@@ -45,8 +45,8 @@ Setup via import map — funciona sem bundler, ideal pros protótipos single-fil
 <script type="importmap">
 {
   "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/"
+    "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
   }
 }
 </script>
@@ -83,8 +83,8 @@ Cuidados: checar `prefers-reduced-motion` e limitar `pixelRatio` em mobile; nunc
 **Usar quando:** a seção precisa "contar uma história" enquanto o usuário rola — pin de seção, reveal sequenciado, parallax controlado.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
@@ -120,7 +120,7 @@ const split = splitText('.headline');
 animate(split.words, { opacity: [0, 1], translateY: [10, 0], delay: stagger(30) });
 ```
 
-Via CDN sem bundler: `<script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>` e usar `const { animate } = anime;`.
+Via CDN sem bundler: `<script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js"></script>` e usar `const { animate } = anime;`.
 
 ## 6. Motion (motion.dev) — animação declarativa em React
 
@@ -165,3 +165,9 @@ Rodar antes de codar qualquer landing/site novo:
 ## 8. Regra de ouro
 
 Motion serve à narrativa, não decora por decorar. Antes de empilhar as 4 ferramentas num projeto só, pergunte: essa animação ajuda o usuário a entender ou sentir algo, ou é só "porque dá pra fazer"? Um site com 1 animação certeira vale mais que 10 genéricas.
+
+## 9. Veja também
+
+- [`../mestre-de-design/SKILL.md`](../mestre-de-design/SKILL.md) — agente Mestre de Design: composição, 2D, 3D, vídeo programático e Godot.
+- [`../mestre-de-design/references/anti-slop.md`](../mestre-de-design/references/anti-slop.md) — Impeccable e taste-skill para detectar e remover "AI slop" antes de entregar.
+- [`../mestre-de-design/references/3d-web.md`](../mestre-de-design/references/3d-web.md) — Three.js com glTF, React Three Fiber, física e otimização de modelos.
